@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+  
+  .light {
+    --color-primary: 120, 83, 58; /* brown */
+    --color-secondary: 193, 154, 107; /* lighter brown */
+    --color-accent: 227, 207, 175; /* beige */
+    --color-text: 51, 41, 33; /* dark brown */
+    --color-background: 249, 246, 240; /* off-white */
+    --color-card: 255, 255, 255; /* white */
+  }
+  
+  .dark {
+    --color-primary: 193, 154, 107; /* lighter brown */
+    --color-secondary: 227, 207, 175; /* beige */
+    --color-accent: 120, 83, 58; /* brown */
+    --color-text: 249, 246, 240; /* off-white */
+    --color-background: 28, 25, 23; /* very dark brown */
+    --color-card: 41, 37, 36; /* dark gray-brown */
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-primary;
+  }
+  
+  .section-container {
+    @apply max-w-6xl mx-auto px-5 md:px-8 py-16;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white py-3 px-6 rounded-md font-medium 
+    hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2;
+  }
+  
+  .skill-card {
+    @apply flex flex-col items-center justify-center bg-card p-4 rounded-lg shadow-md transition-transform duration-300 hover:scale-105;
+  }
+  
+  .project-card {
+    @apply bg-card p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300;
+  }
+}
+
+.hero-gradient {
+  @apply bg-gradient-to-b from-background via-background to-accent;
+  opacity: 0.9;
+}
